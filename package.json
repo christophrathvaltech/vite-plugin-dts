@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-dts",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "type": "module",
   "license": "MIT",
   "author": "qmhc",
@@ -10,7 +10,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s --commit-path .",
     "dev": "unbuild --stub",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx \"{src,tests}/**\"",
-    "postinstall": "is-ci || husky install",
+    "_postinstall": "is-ci || husky install",
     "postpublish": "pinst --enable",
     "precommit": "lint-staged -c ./.husky/.lintstagedrc -q",
     "prepublishOnly": "pinst --disable",
