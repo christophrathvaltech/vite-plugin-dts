@@ -402,7 +402,7 @@ const dynamicImportRE = /import\(['"]([^;\n]+?)['"]\)/;
 const simpleStaticImportRE = /((?:import|export).+from\s?)['"](.+)['"]/;
 const simpleDynamicImportRE = /(import\()['"](.+)['"]\)/;
 function transformAliasImport(filePath, content, aliases, exclude = []) {
-  if (aliases && !aliases.length)
+  if (!aliases || !aliases.length)
     return content;
   return content.replace(globalImportRE, (str) => {
     let matchResult = str.match(staticImportRE);
